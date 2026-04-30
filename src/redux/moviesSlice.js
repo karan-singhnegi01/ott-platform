@@ -1,7 +1,7 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
 import axios from 'axios'
 
-const API_KEY = '4e44d9029b1270a757cddc766a1bcb63'
+const API_KEY = 'aff72cf8f9063abea47a5d6171988f65'
 const BASE_URL = 'https://api.themoviedb.org/3'
 
 // Fetch trending movies
