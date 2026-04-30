@@ -3,6 +3,7 @@ import axios from 'axios'
 
 const API_KEY = 'aff72cf8f9063abea47a5d6171988f65'
 const BASE_URL = 'https://api.themoviedb.org/3'
+const headers = { 'Content-Type': 'application/json' }
 
 // Fetch trending movies
 export const fetchTrending = createAsyncThunk('movies/fetchTrending', async () => {
