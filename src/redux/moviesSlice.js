@@ -7,33 +7,33 @@ const headers = { 'Content-Type': 'application/json' }
 
 // Fetch trending movies
 export const fetchTrending = createAsyncThunk('movies/fetchTrending', async () => {
-  const res = await axios.get(`${BASE_URL}/trending/movie/week?api_key=${API_KEY}`)
+  const res = await axios.get(`${BASE_URL}/trending/movie/week?api_key=${API_KEY}&language=en-US`)
   return res.data.results
 })
 
 // Fetch movies by category
 export const fetchByCategory = createAsyncThunk('movies/fetchByCategory', async (category) => {
-  const res = await axios.get(`${BASE_URL}/movie/${category}?api_key=${API_KEY}`)
+  const res = await axios.get(`${BASE_URL}/trending/movie/week?api_key=${API_KEY}&language=en-US`)
   return { category, data: res.data.results }
 })
 
 // Fetch TV shows
 export const fetchTVShows = createAsyncThunk('movies/fetchTVShows', async () => {
-  const res = await axios.get(`${BASE_URL}/trending/tv/week?api_key=${API_KEY}`)
+  const res = await axios.get(`${BASE_URL}/trending/movie/week?api_key=${API_KEY}&language=en-US`)
   return res.data.results
 })
 
 // Search movies
 export const searchMovies = createAsyncThunk('movies/searchMovies', async (query) => {
-  const res = await axios.get(`${BASE_URL}/search/multi?api_key=${API_KEY}&query=${query}`)
+  const res = await axios.get(`${BASE_URL}/trending/movie/week?api_key=${API_KEY}&language=en-US`)
   return res.data.results
 })
 
 // Fetch movie details
 export const fetchMovieDetail = createAsyncThunk('movies/fetchMovieDetail', async (id) => {
   const [detail, videos] = await Promise.all([
-    axios.get(`${BASE_URL}/movie/${id}?api_key=${API_KEY}`),
-    axios.get(`${BASE_URL}/movie/${id}/videos?api_key=${API_KEY}`)
+    axios.get(`${BASE_URL}/trending/movie/week?api_key=${API_KEY}&language=en-US`)
+    axios.get(`${BASE_URL}/trending/movie/week?api_key=${API_KEY}&language=en-US`)
   ])
   return { ...detail.data, videos: videos.data.results }
 })
